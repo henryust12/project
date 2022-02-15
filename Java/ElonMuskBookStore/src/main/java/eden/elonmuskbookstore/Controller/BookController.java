@@ -5,11 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
-
-    @RequestMapping("/")
-    public String home(Model model){
-        return "Home";
+public class BookController {
+    
+    @RequestMapping("/book")
+    public String book(Model model){
+        return "BookList";
     }
-
 }
