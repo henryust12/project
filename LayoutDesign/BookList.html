@@ -35,10 +35,10 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <!-- Book -->
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">本リスト</a>
+                            <a class="nav-link" aria-current="page" href="./BookList.html">本リスト</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./BookEntry.html">本挿入</a>
+                            <a class="nav-link active" href="#">本挿入</a>
                         </li>
                         <hr>
                         <!-- Employee -->
@@ -49,13 +49,7 @@
                             <a class="nav-link" href="#">従業員挿入</a>
                         </li>
                         <hr>
-                        <!--  -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">従業員リスト</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">従業員挿入</a>
-                        </li>
+
 
                         <hr>
                         <li class="nav-item">
@@ -72,8 +66,8 @@
         <!--　↓ Table-Start -->
         <div class="table-responsive-sm">
             <table class="table table-success table-striped table-bordered table-hover mt-5">
-                <!--　↓ Table-Start -->
-                <tr class="table-primary">
+                
+                <tr class="table-dark">
                     <!--ISBN Code-->
                     <th>ISBN</th>
                     <!--Title-->
@@ -98,7 +92,7 @@
                     <th>Updated</th>
                     <th>Action</th>
                 </tr>
-                <!--　↑ Table-Start -->
+                
 
                 <tr>
                     <td>1122222221</td>
@@ -115,7 +109,33 @@
                     <td>2022/2/1</td>
                     <td class="text-center">
                         <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#CheckDeleteBook">
+                            削除
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="CheckDeleteBook" tabindex="-1" aria-labelledby="DeleteBookModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="DeleteBookModal">削除メッセージ</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span class="text-danger">NARUTO　ー　ISBN「abc」</span> を削除しますか？
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">いいえ</button>
+                                        <button type="button" class="btn btn-primary">はい</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -133,7 +153,33 @@
                     <td>2022/2/1</td>
                     <td class="text-center">
                         <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#CheckDeleteBook">
+                            削除
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="CheckDeleteBook" tabindex="-1" aria-labelledby="DeleteBookModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="DeleteBookModal">削除メッセージ</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span class="text-danger">NARUTO　ー　ISBN「abc」</span> を削除しますか？
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">いいえ</button>
+                                        <button type="button" class="btn btn-primary">はい</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -151,7 +197,33 @@
                     <td>2022/2/1</td>
                     <td class="text-center">
                         <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#CheckDeleteBook">
+                            削除
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="CheckDeleteBook" tabindex="-1" aria-labelledby="DeleteBookModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="DeleteBookModal">削除メッセージ</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span class="text-danger">NARUTO　ー　ISBN「abc」</span> を削除しますか？
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">いいえ</button>
+                                        <button type="button" class="btn btn-primary">はい</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -169,7 +241,33 @@
                     <td>2022/2/1</td>
                     <td class="text-center">
                         <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#CheckDeleteBook">
+                            削除
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="CheckDeleteBook" tabindex="-1" aria-labelledby="DeleteBookModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="DeleteBookModal">削除メッセージ</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span class="text-danger">NARUTO　ー　ISBN「abc」</span> を削除しますか？
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">いいえ</button>
+                                        <button type="button" class="btn btn-primary">はい</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -187,7 +285,33 @@
                     <td>2022/2/1</td>
                     <td class="text-center">
                         <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#CheckDeleteBook">
+                            削除
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="CheckDeleteBook" tabindex="-1" aria-labelledby="DeleteBookModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="DeleteBookModal">削除メッセージ</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span class="text-danger">NARUTO　ー　ISBN「abc」</span> を削除しますか？
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">いいえ</button>
+                                        <button type="button" class="btn btn-primary">はい</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -205,7 +329,121 @@
                     <td>2022/2/1</td>
                     <td class="text-center">
                         <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#CheckDeleteBook">
+                            削除
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="CheckDeleteBook" tabindex="-1" aria-labelledby="DeleteBookModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="DeleteBookModal">削除メッセージ</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span class="text-danger">NARUTO　ー　ISBN「abc」</span> を削除しますか？
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">いいえ</button>
+                                        <button type="button" class="btn btn-primary">はい</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr><tr>
+                    <td>1122222221</td>
+                    <td>NARUTO</td>
+                    <td>ナルト</td>
+                    <td>1200</td>
+                    <td>20</td>
+                    <td>15</td>
+                    <td>新潮社</td>
+                    <td>岸本　斉史</td>
+                    <td>マサシ　キシモト</td>
+                    <td>ファンタジー</td>
+                    <td>2022/2/2</td>
+                    <td>2022/2/1</td>
+                    <td class="text-center">
+                        <button type="button" class="btn btn-primary">更新</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#CheckDeleteBook">
+                            削除
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="CheckDeleteBook" tabindex="-1" aria-labelledby="DeleteBookModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="DeleteBookModal">削除メッセージ</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span class="text-danger">NARUTO　ー　ISBN「abc」</span> を削除しますか？
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">いいえ</button>
+                                        <button type="button" class="btn btn-primary">はい</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>1122222221</td>
+                    <td>NARUTO</td>
+                    <td>ナルト</td>
+                    <td>1200</td>
+                    <td>20</td>
+                    <td>15</td>
+                    <td>新潮社</td>
+                    <td>岸本　斉史</td>
+                    <td>マサシ　キシモト</td>
+                    <td>ファンタジー</td>
+                    <td>2022/2/2</td>
+                    <td>2022/2/1</td>
+                    <td class="text-center">
+                        <button type="button" class="btn btn-primary">更新</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#CheckDeleteBook">
+                            削除
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="CheckDeleteBook" tabindex="-1" aria-labelledby="DeleteBookModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="DeleteBookModal">削除メッセージ</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span class="text-danger">NARUTO　ー　ISBN「abc」</span> を削除しますか？
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">いいえ</button>
+                                        <button type="button" class="btn btn-primary">はい</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -223,153 +461,36 @@
                     <td>2022/2/1</td>
                     <td class="text-center">
                         <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#CheckDeleteBook">
+                            削除
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="CheckDeleteBook" tabindex="-1" aria-labelledby="DeleteBookModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="DeleteBookModal">削除メッセージ</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span class="text-danger">NARUTO　ー　ISBN「abc」</span> を削除しますか？
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">いいえ</button>
+                                        <button type="button" class="btn btn-primary">はい</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
-                <tr>
-                    <td>1122222221</td>
-                    <td>NARUTO</td>
-                    <td>ナルト</td>
-                    <td>1200</td>
-                    <td>20</td>
-                    <td>15</td>
-                    <td>新潮社</td>
-                    <td>岸本　斉史</td>
-                    <td>マサシ　キシモト</td>
-                    <td>ファンタジー</td>
-                    <td>2022/2/2</td>
-                    <td>2022/2/1</td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1122222221</td>
-                    <td>NARUTO</td>
-                    <td>ナルト</td>
-                    <td>1200</td>
-                    <td>20</td>
-                    <td>15</td>
-                    <td>新潮社</td>
-                    <td>岸本　斉史</td>
-                    <td>マサシ　キシモト</td>
-                    <td>ファンタジー</td>
-                    <td>2022/2/2</td>
-                    <td>2022/2/1</td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1122222221</td>
-                    <td>NARUTO</td>
-                    <td>ナルト</td>
-                    <td>1200</td>
-                    <td>20</td>
-                    <td>15</td>
-                    <td>新潮社</td>
-                    <td>岸本　斉史</td>
-                    <td>マサシ　キシモト</td>
-                    <td>ファンタジー</td>
-                    <td>2022/2/2</td>
-                    <td>2022/2/1</td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1122222221</td>
-                    <td>NARUTO</td>
-                    <td>ナルト</td>
-                    <td>1200</td>
-                    <td>20</td>
-                    <td>15</td>
-                    <td>新潮社</td>
-                    <td>岸本　斉史</td>
-                    <td>マサシ　キシモト</td>
-                    <td>ファンタジー</td>
-                    <td>2022/2/2</td>
-                    <td>2022/2/1</td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1122222221</td>
-                    <td>NARUTO</td>
-                    <td>ナルト</td>
-                    <td>1200</td>
-                    <td>20</td>
-                    <td>15</td>
-                    <td>新潮社</td>
-                    <td>岸本　斉史</td>
-                    <td>マサシ　キシモト</td>
-                    <td>ファンタジー</td>
-                    <td>2022/2/2</td>
-                    <td>2022/2/1</td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1122222221</td>
-                    <td>NARUTO</td>
-                    <td>ナルト</td>
-                    <td>1200</td>
-                    <td>20</td>
-                    <td>15</td>
-                    <td>新潮社</td>
-                    <td>岸本　斉史</td>
-                    <td>マサシ　キシモト</td>
-                    <td>ファンタジー</td>
-                    <td>2022/2/2</td>
-                    <td>2022/2/1</td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1122222221</td>
-                    <td>NARUTO</td>
-                    <td>ナルト</td>
-                    <td>1200</td>
-                    <td>20</td>
-                    <td>15</td>
-                    <td>新潮社</td>
-                    <td>岸本　斉史</td>
-                    <td>マサシ　キシモト</td>
-                    <td>ファンタジー</td>
-                    <td>2022/2/2</td>
-                    <td>2022/2/1</td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1122222221</td>
-                    <td>NARUTO</td>
-                    <td>ナルト</td>
-                    <td>1200</td>
-                    <td>20</td>
-                    <td>15</td>
-                    <td>新潮社</td>
-                    <td>岸本　斉史</td>
-                    <td>マサシ　キシモト</td>
-                    <td>ファンタジー</td>
-                    <td>2022/2/2</td>
-                    <td>2022/2/1</td>
-                    <td class="text-center">
-                        <button type="button" class="btn btn-primary">更新</button>
-                        <button type="button" class="btn btn-danger">削除</button>
-                    </td>
-                </tr>
+                
 
             </table>
         </div>
