@@ -1,3 +1,0 @@
-# Company Project
-
-SpringBoot Folder

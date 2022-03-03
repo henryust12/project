@@ -9,3 +9,7 @@ body {
     background-color: aqua;
     margin: .4em;
 }
+
+a{
+    text-decoration: none;
+}
