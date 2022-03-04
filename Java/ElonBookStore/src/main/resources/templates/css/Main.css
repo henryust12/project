@@ -1,0 +1,15 @@
+body {
+    /* background-image: url("../images/bg.jpg"); */
+    background-color: #f6f6f6;
+}
+
+.box{
+    width:10em;
+    height: 10em;
+    background-color: aqua;
+    margin: .4em;
+}
+
+a{
+    text-decoration: none;
+}
