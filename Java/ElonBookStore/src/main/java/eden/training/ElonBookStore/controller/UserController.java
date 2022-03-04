@@ -31,5 +31,10 @@ public class UserController {
 	public String userDelete() {
 		return "deleted";
 	}
+	
+	@GetMapping("/logout")
+	public String userLogout() {
+		return "Home";
+	}
 
 }
