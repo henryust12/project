@@ -29,4 +29,9 @@ public class CashierController {
 	public String cashierBuyHistory() {
 		return "CashierBuyHistory";
 	}
+	
+	@GetMapping("/buy")
+	public String cashierBuy() {
+		return "Buy";
+	}
 }

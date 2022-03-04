@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html xmlns:th="https://www.thymeleaf.org" lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -26,7 +26,7 @@
 <body>
     <div class="container-sm mt-5">
 
-        <a href="./CashierHome.html">
+        <a href="cashierhome">
             <button type="button" class="btn btn-info">戻る</button>
         </a>
         
@@ -86,7 +86,8 @@
             <tfoot>
                 <tr>
                     <th class="text-end" colspan="2" scope="row">
-                        <input id="txtNumb" type="number" name="count" class="form-control" id="count" placeholder="数" min="1" max="3">
+<!--                         <input id="txtNumb" type="number" name="count" class="form-control" id="count" placeholder="数" min="1" max="3"> -->
+                        <input id="txtNumb" type="number" name="count" class="form-control" placeholder="数" min="1" max="3">
                         <button id="buySubmit" type="button" class="btn btn-info">登録</button>
                     </th>
                   </tr>
