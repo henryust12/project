@@ -42,7 +42,7 @@ create table ElonBooks
 -- Elon Genres -
 create table ElonGenres
 (
-    id              int(2)                              not null,
+    id              int(2)                              not null auto_increment,
     genre_name      varchar(100)                        not null,
     created         datetime default current_timestamp  null,
     updated         datetime default current_timestamp  null,
@@ -54,7 +54,7 @@ create table ElonGenres
 -- Elon Buys --
 create table ElonBuys
 (
-    id              int(11)                             not null,
+    id              int(11)                             not null auto_increment,
     user_id         varchar(10)                         null,
     isbn            varchar(20)                         not null,
     amount          int(3)                              null default 0,
