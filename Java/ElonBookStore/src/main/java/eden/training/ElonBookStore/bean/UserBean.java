@@ -12,7 +12,7 @@ import lombok.Getter;
  * @author shima
  *
  */
-@Getter
+
 public class UserBean {
 	private String userId;
 	private String firstName;
@@ -21,8 +21,12 @@ public class UserBean {
 	private String lastNameKana;
 	private char sex;
 	private String phoneNumber;
-	private Date birthday;
-	private Date dateOfEmployee;
+//	private Date birthday;
+//	private Date dateOfEmployee;
+	private String birthday;
+	private String dateOfEmployee;
 	private char userLevel;
 	private String password;
+	
+
 }

@@ -1,6 +1,6 @@
 use ElonBook;
 -- Elon Users --
-create table ElonUsers
+create table elon_users
 (
     USER_ID          varchar(10)                        not null,
     FIRST_NAME       varchar(100)                       not null,
@@ -16,12 +16,12 @@ create table ElonUsers
     PASSWORD         varchar(100)  default 1234         null,
     CREATED          datetime default current_timestamp null,
     UPDATED          datetime default current_timestamp null,
-    constraint ElonUsers_pk
+    constraint elon_users_pk
         primary key (USER_ID)
 );
 
 -- Elon Books --
-create table ElonBooks
+create table elon_books
 (
     ISBN            varchar(20)                         not null,
     TITLE           varchar(100)                        not null,
@@ -35,60 +35,60 @@ create table ElonBooks
     GENRE_ID        int(2)                              null,
     CREATED         datetime default current_timestamp  null,
     UPDATED         datetime default current_timestamp  null,
-    constraint ElonBooks_pk
+    constraint elon_books_pk
         primary key (ISBN)
 );
 
 -- Elon Genres -
-create table ElonGenres
+create table elon_genres
 (
     ID              int(2)                              not null auto_increment,
     GENRE_NAME      varchar(100)                        not null,
     CREATED         datetime default current_timestamp  null,
     UPDATED         datetime default current_timestamp  null,
-    constraint ElonGenres_pk
+    constraint elon_genres_pk
         primary key (id)
 );
 
 
 -- Elon Buys --
-create table ElonBuys
+create table elon_buys
 (
     ID              int(11)                             not null auto_increment,
     USER_ID         varchar(10)                         null,
     ISBN            varchar(20)                         not null,
     AMOUNT          int(3)                              null default 0,
     CREATED         datetime default current_timestamp  null,
-    constraint ElonBuys_pk
+    constraint elon_buys_pk
         primary key (ID)
 );
 
 
 -- RELATION --
 -- Book to Genre --
-alter table ElonBooks
-    add constraint ElonBooks_ElonGenres_id_fk
-        foreign key (GENRE_ID) references ElonGenres (ID)
+alter table elon_books
+    add constraint elon_books_elon_genres_id_fk
+        foreign key (GENRE_ID) references elon_genres (ID)
             on update cascade on delete set null;
 
 
 -- Buy to Book --
-alter table ElonBuys
+alter table elon_buys
     add constraint ElonBuys_ElonBooks_isbn_fk
-        foreign key (ISBN) references ElonBooks (ISBN)
+        foreign key (ISBN) references elon_books (ISBN)
             on update cascade on delete cascade;
 
 -- Buy to User --
-alter table ElonBuys
+alter table elon_buys
     add constraint ElonBuys_ElonUsers_user_id_fk
-        foreign key (USER_ID) references ElonUsers (USER_ID)
+        foreign key (USER_ID) references elon_users (USER_ID)
             on update cascade on delete set null;
 
 
 
 -- Insert Data --
 -- Insert into genre --
-INSERT INTO ElonGenres
+INSERT INTO elon_genres
     (GENRE_NAME, CREATED, UPDATED)
     VALUES
            ('文芸', DEFAULT, DEFAULT),
@@ -110,12 +110,12 @@ INSERT INTO ElonGenres
            ('辞典', DEFAULT, DEFAULT);
 
 -- Insert into user --
-INSERT INTO ElonUsers (USER_ID, FIRST_NAME, FIRST_NAME_KANA, LAST_NAME, LAST_NAME_KANA, SEX, PHONE_NUMBER, BIRTHDAY, DATE_OF_EMPLOYEE, USER_LEVEL, PASSWORD, CREATED, UPDATED) VALUES ('1111111', 'HENDRI', 'へんどり', 'SIMARMATA', 'しまるまた', '1', '07012345678', '2022-03-05', '2022-03-05', '2', '1234', DEFAULT, DEFAULT);
+INSERT INTO elon_users (USER_ID, FIRST_NAME, FIRST_NAME_KANA, LAST_NAME, LAST_NAME_KANA, SEX, PHONE_NUMBER, BIRTHDAY, DATE_OF_EMPLOYEE, USER_LEVEL, PASSWORD, CREATED, UPDATED) VALUES ('1111111', 'HENDRI', 'へんどり', 'SIMARMATA', 'しまるまた', '1', '07012345678', '2022-03-05', '2022-03-05', '2', '1234', DEFAULT, DEFAULT);
 
 -- Insert into book --
-INSERT INTO ElonBooks (ISBN, TITLE, TITLE_KANA, PRICE, DISCOUNT, STOCK, PUBLISHER, AUTHOR, AUTHOR_KANA, GENRE_ID, CREATED, UPDATED) VALUES ('1122222221', 'NARUTO', 'ナルト', 1200, 20, 15, '新潮社', '岸本　斉史', 'マサシ　キシモト', 4, DEFAULT, DEFAULT);
+INSERT INTO elon_books (ISBN, TITLE, TITLE_KANA, PRICE, DISCOUNT, STOCK, PUBLISHER, AUTHOR, AUTHOR_KANA, GENRE_ID, CREATED, UPDATED) VALUES ('1122222221', 'NARUTO', 'ナルト', 1200, 20, 15, '新潮社', '岸本　斉史', 'マサシ　キシモト', 4, DEFAULT, DEFAULT);
 
 -- Insert into buy --
-INSERT INTO ElonBuys (USER_ID, ISBN, AMOUNT, CREATED) VALUES ('1111111', '1122222221', 3, DEFAULT);
-INSERT INTO ElonBuys (USER_ID, ISBN, AMOUNT, CREATED) VALUES ('1111111', '1122222221', 5, DEFAULT);
-INSERT INTO ElonBuys (USER_ID, ISBN, AMOUNT, CREATED) VALUES ('1111111', '1122222221', 2, DEFAULT);
+INSERT INTO elon_buys (USER_ID, ISBN, AMOUNT, CREATED) VALUES ('1111111', '1122222221', 3, DEFAULT);
+INSERT INTO elon_buys (USER_ID, ISBN, AMOUNT, CREATED) VALUES ('1111111', '1122222221', 5, DEFAULT);
+INSERT INTO elon_buys (USER_ID, ISBN, AMOUNT, CREATED) VALUES ('1111111', '1122222221', 2, DEFAULT);
