@@ -4,7 +4,7 @@
 package com.eden.ElonBookStore.model.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,6 +25,9 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "TBL_BUYS")
 public class Buys implements Serializable {
+	
+
+
 	/**
 	 * @param id
 	 * @param books
@@ -55,10 +58,10 @@ public class Buys implements Serializable {
 	
 	@Column(nullable = false, name = "amount")
 	private int amount;
-	
+	 
 	@Column(nullable = true, name = "created")
-	@Temporal(TemporalType.TIMESTAMP)
-	private java.util.Date created;
+//	@Temporal(TemporalType.TIMESTAMP)
+	private Date created;
 
 	/**
 	 * @return the id
@@ -119,16 +122,19 @@ public class Buys implements Serializable {
 	/**
 	 * @return the created
 	 */
-	public java.util.Date getCreated() {
+	public Date getCreated() {
 		return created;
 	}
 
 	/**
 	 * @param created the created to set
 	 */
-	public void setCreated(java.util.Date created) {
+	public void setCreated(Date created) {
 		this.created = created;
 	}
+
+	
+
 	
 	
 	

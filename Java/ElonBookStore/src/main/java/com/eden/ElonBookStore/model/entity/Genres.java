@@ -4,7 +4,7 @@
 package com.eden.ElonBookStore.model.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -44,12 +44,12 @@ public class Genres implements Serializable {
 	private String genreName;
 	
 	@Column(nullable = true, name = "created")
-	@Temporal(TemporalType.TIMESTAMP)
-	private java.util.Date created;
+//	@Temporal(TemporalType.TIMESTAMP)
+	private Date created;
 
 	@Column(nullable = true, name = "updated")
-	@Temporal(TemporalType.TIMESTAMP)
-	private java.util.Date updated;
+//	@Temporal(TemporalType.TIMESTAMP)
+	private Date updated;
 
 	/**
 	 * @return the id
@@ -87,24 +87,26 @@ public class Genres implements Serializable {
 	}
 
 	/**
-	 * @param created the created to set
-	 */
-	public void setCreated(java.util.Date created) {
-		this.created = created;
-	}
-
-	/**
 	 * @return the updated
 	 */
-	public java.util.Date getUpdated() {
+	public Date getUpdated() {
 		return updated;
 	}
 
 	/**
 	 * @param updated the updated to set
 	 */
-	public void setUpdated(java.util.Date updated) {
+	public void setUpdated(Date updated) {
 		this.updated = updated;
 	}
+
+	/**
+	 * @param created the created to set
+	 */
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	
 
 }

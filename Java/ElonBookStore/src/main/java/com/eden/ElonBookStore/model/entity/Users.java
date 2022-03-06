@@ -21,6 +21,11 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name="TBL_USERS")
 public class Users implements Serializable {
+	
+
+
+
+
 	/**
 	 * @param userId
 	 * @param firstName
@@ -37,8 +42,8 @@ public class Users implements Serializable {
 	 * @param updated
 	 */
 	public Users(String userId, String firstName, String firstNameKana, String lastName, String lastNameKana, char sex,
-			String phoneNumber, Date birthday, String dateOfEmployee, char userLevel, String password,
-			java.util.Date created, java.util.Date updated) {
+			String phoneNumber, Date birthday, Date dateOfEmployee, char userLevel, String password, Date created,
+			Date updated) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
@@ -79,9 +84,9 @@ public class Users implements Serializable {
 	@Column(nullable = true, name = "birthday")
 	private Date birthday;
 
-	@Column(nullable = false, name = "date_of_employee")
-	private String dateOfEmployee;
-
+	@Column(nullable = true, name = "date_of_employee")
+	private Date dateOfEmployee; 
+ 
 	@Column(nullable = false, name = "user_level")
 	private char userLevel;
 
@@ -90,12 +95,10 @@ public class Users implements Serializable {
 	
 
 	@Column(nullable = true, name = "created")
-	@Temporal(TemporalType.TIMESTAMP)
-	private java.util.Date created;
+	private Date created;
 
 	@Column(nullable = true, name = "updated")
-	@Temporal(TemporalType.TIMESTAMP)
-	private java.util.Date updated;
+	private Date updated;
 
 	/**
 	 * @return the userId
@@ -212,14 +215,14 @@ public class Users implements Serializable {
 	/**
 	 * @return the dateOfEmployee
 	 */
-	public String getDateOfEmployee() {
+	public Date getDateOfEmployee() {
 		return dateOfEmployee;
 	}
 
 	/**
 	 * @param dateOfEmployee the dateOfEmployee to set
 	 */
-	public void setDateOfEmployee(String dateOfEmployee) {
+	public void setDateOfEmployee(Date dateOfEmployee) {
 		this.dateOfEmployee = dateOfEmployee;
 	}
 
@@ -254,30 +257,35 @@ public class Users implements Serializable {
 	/**
 	 * @return the created
 	 */
-	public java.util.Date getCreated() {
+	public java.sql.Date getCreated() {
 		return created;
 	}
 
 	/**
 	 * @param created the created to set
 	 */
-	public void setCreated(java.util.Date created) {
+	public void setCreated(java.sql.Date created) {
 		this.created = created;
 	}
 
 	/**
 	 * @return the updated
 	 */
-	public java.util.Date getUpdated() {
+	public java.sql.Date getUpdated() {
 		return updated;
 	}
 
 	/**
 	 * @param updated the updated to set
 	 */
-	public void setUpdated(java.util.Date updated) {
+	public void setUpdated(java.sql.Date updated) {
 		this.updated = updated;
 	}
+
+
+
+	
+
 
 
 

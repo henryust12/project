@@ -4,7 +4,7 @@
 package com.eden.ElonBookStore.model.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,36 +23,8 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "TBL_BOOKS")
 public class Books implements Serializable {
-	/**
-	 * @param isbn
-	 * @param title
-	 * @param titleKana
-	 * @param price
-	 * @param discount
-	 * @param stock
-	 * @param publisher
-	 * @param author
-	 * @param authorKana
-	 * @param genres
-	 * @param created
-	 * @param updated
-	 */
-	public Books(String isbn, String title, String titleKana, int price, int discount, int stock, String publisher,
-			String author, String authorKana, Genres genres, Date created, Date updated) {
-		super();
-		this.isbn = isbn;
-		this.title = title;
-		this.titleKana = titleKana;
-		this.price = price;
-		this.discount = discount;
-		this.stock = stock;
-		this.publisher = publisher;
-		this.author = author;
-		this.authorKana = authorKana;
-		this.genres = genres;
-		this.created = created;
-		this.updated = updated;
-	}
+	
+
 
 	@Id
 	private String isbn;
@@ -86,13 +58,13 @@ public class Books implements Serializable {
 	private Genres genres;
 	
 	@Column(nullable = true, name = "created")
-	@Temporal(TemporalType.TIMESTAMP)
-	private java.util.Date created;
+//	@Temporal(TemporalType.TIMESTAMP)
+	private Date created;
 
 	@Column(nullable = true, name = "updated")
-	@Temporal(TemporalType.TIMESTAMP)
-	private java.util.Date updated;
-
+//	@Temporal(TemporalType.TIMESTAMP)
+	private Date updated;
+ 
 	/**
 	 * @return the isbn
 	 */
@@ -236,32 +208,33 @@ public class Books implements Serializable {
 	/**
 	 * @return the created
 	 */
-	public java.util.Date getCreated() {
+	public Date getCreated() {
 		return created;
 	}
 
 	/**
 	 * @param created the created to set
 	 */
-	public void setCreated(java.util.Date created) {
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
 	/**
 	 * @return the updated
 	 */
-	public java.util.Date getUpdated() {
+	public Date getUpdated() {
 		return updated;
 	}
 
 	/**
 	 * @param updated the updated to set
 	 */
-	public void setUpdated(java.util.Date updated) {
+	public void setUpdated(Date updated) {
 		this.updated = updated;
 	}
-	
-	
+
+
+
 	
 
 }
