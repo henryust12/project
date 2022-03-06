@@ -58,42 +58,42 @@ public class Users implements Serializable {
 	@Id
 	private String userId;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "first_name")
 	private String firstName;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "first_name_kana")
 	private String firstNameKana;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "last_name")
 	private String lastName;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "last_name_kana")
 	private String lastNameKana;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "sex")
 	private char sex;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "phone_number")
 	private String phoneNumber;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "birthday")
 	private Date birthday;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "date_of_employee")
 	private String dateOfEmployee;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "user_level")
 	private char userLevel;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "password")
 	private String password;
 	
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "created")
 	@Temporal(TemporalType.TIMESTAMP)
 	private java.util.Date created;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "updated")
 	@Temporal(TemporalType.TIMESTAMP)
 	private java.util.Date updated;
 

@@ -57,39 +57,39 @@ public class Books implements Serializable {
 	@Id
 	private String isbn;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "title")
 	private String title;
 	
-	@Column(nullable = true)
+	@Column(nullable = true, name = "title_kana")
 	private String titleKana;
 	
-	@Column(nullable = true)
+	@Column(nullable = true, name = "price")
 	private int price;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "discount")
 	private int discount;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "stock")
 	private int stock;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "publisher")
 	private String publisher;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "author")
 	private String author;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "author_kana")
 	private String authorKana;
 	
 	@ManyToOne
 	@JoinColumn(name = "genre_id")
 	private Genres genres;
 	
-	@Column(nullable = true)
+	@Column(nullable = true, name = "created")
 	@Temporal(TemporalType.TIMESTAMP)
 	private java.util.Date created;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "updated")
 	@Temporal(TemporalType.TIMESTAMP)
 	private java.util.Date updated;
 

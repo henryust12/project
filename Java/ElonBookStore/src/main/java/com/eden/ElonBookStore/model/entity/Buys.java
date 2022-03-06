@@ -53,10 +53,10 @@ public class Buys implements Serializable {
 	@JoinColumn(name = "user_id")
 	private Users user;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "amount")
 	private int amount;
 	
-	@Column(nullable = true)
+	@Column(nullable = true, name = "created")
 	@Temporal(TemporalType.TIMESTAMP)
 	private java.util.Date created;
 

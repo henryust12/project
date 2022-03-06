@@ -40,14 +40,14 @@ public class Genres implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "genre_name")
 	private String genreName;
 	
-	@Column(nullable = true)
+	@Column(nullable = true, name = "created")
 	@Temporal(TemporalType.TIMESTAMP)
 	private java.util.Date created;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "updated")
 	@Temporal(TemporalType.TIMESTAMP)
 	private java.util.Date updated;
 
