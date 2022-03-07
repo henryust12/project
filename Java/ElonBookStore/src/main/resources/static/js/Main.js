@@ -18,4 +18,26 @@ $('#buySubmit').click(function() {
  });
 
 
- 
+  function getCurrentDate(){
+    	function pad2(n) {
+    		  return (n < 10 ? '0' : '') + n;
+    		}
+
+    		var date = new Date();
+    		var month = pad2(date.getMonth()+1);//months (0-11)
+    		var day = pad2(date.getDate());//day (1-31)
+    		var year= date.getFullYear();
+
+    		var formattedDate =  year+"-"+month+"-"+day;
+    		
+//     		alert(formattedDate); //2021-02-28
+    		return formattedDate;
+    		hid1.val(formattedDate);
+    		hid2.val(formattedDate);
+    }
+
+
+function deleteAlert() {
+	alert("データを削除しました");
+}
+

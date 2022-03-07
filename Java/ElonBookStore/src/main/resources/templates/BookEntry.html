@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -21,6 +21,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="/images/favicon/site.webmanifest">
     <title>本エントリ-エロン-本屋</title>
+    
 </head>
 
 <body>
@@ -64,172 +65,51 @@
         </nav>
 
         <!--　↑ navbar-end -->
-
-
         <!--　↓ Form-Start -->
-        <form class="row g-3 mt-5">
+        <form class="row g-3 mt-5" action="#" th:action="@{/books/addAction}" th:object="${book}" method="post">
             <div class="col-md-12">
                 <label for="bookISBN" class="form-label">ISBN</label>
-                <input type="text" name="bookISBN" class="form-control" id="bookISBN">
+                <input type="text" th:field="*{isbn}" class="form-control" id="bookISBN">
             </div>
             <div class="col-md-6">
                 <label for="bookTitle" class="form-label">タイトル</label>
-                <input type="text" name="bookTitle" class="form-control" id="bookTitle">
+                <input type="text" th:field="*{title}"  class="form-control" id="bookTitle">
             </div>
             <div class="col-md-6">
                 <label for="bookTitleKana" class="form-label">タイトル仮名</label>
-                <input type="text" name="bookTitleKana" class="form-control" id="bookTitleKana">
+                <input type="text" th:field="*{titleKana}" class="form-control" id="bookTitleKana">
             </div>
             <div class="col-md-6">
                 <label for="bookPrice" class="form-label">値段</label>
-                <input type="text" name="bookPrice" class="form-control" id="bookPrice">
+                <input type="text"th:field="*{price}" class="form-control" id="bookPrice">
             </div>
             <div class="col-md-2">
                 <label for="bookDiscount" class="form-label">割引「 ％ 」</label>
-                <input type="number" name="bookDiscount" step="5" min="5" class="form-control" id="bookDiscount">
+                <input type="number" th:field="*{discount}" step="5" min="5" class="form-control" id="bookDiscount">
             </div>
             <div class="col-md-4">
                 <label for="bookStock" class="form-label">在庫</label>
-                <input type="number" name="bookStock" min="1" class="form-control" id="bookStock">
+                <input type="number" th:field="*{stock}" min="1" class="form-control" id="bookStock">
             </div>
             <div class="col-md-12">
                 <label for="bookPublisher" class="form-label">出版社</label>
-                <input type="text" name="bookPublisher" class="form-control" id="bookPublisher">
+                <input type="text" th:field="*{publisher}" class="form-control" id="bookPublisher">
             </div>
             <div class="col-md-6">
                 <label for="bookAuthor" class="form-label">著者</label>
-                <input type="text" name="bookAuthor" class="form-control" id="bookAuthor">
+                <input type="text" th:field="*{author}" class="form-control" id="bookAuthor">
             </div>
             <div class="col-md-6">
                 <label for="bookAuthorKana" class="form-label">著者仮名</label>
-                <input type="text" name="bookAuthorKana" class="form-control" id="bookAuthorKana">
+                <input type="text" th:field="*{authorKana}" class="form-control" id="bookAuthorKana">
             </div>
-            <div class="col-12">
-                <fieldset class="row">
-                    <legend>ジャンル</legend>
-                    <!-- ジャンルリスト -->
-                    <!-- https://www.kinokuniya.co.jp/disp/CKnSfGenreSelect.jsp?dispNo=101001 -->
-                    <!-- Literature -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre1" type="checkbox" id="genre1">
-                        <label class="form-check-label" for="genre1">
-                            文芸
-                        </label>
-                    </div>
-                    <!-- Culture -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre2" type="checkbox" id="genre1">
-                        <label class="form-check-label" for="genre2">
-                            教養
-                        </label>
-                    </div>
-                    <!-- Education -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre3" type="checkbox" id="genre3">
-                        <label class="form-check-label" for="genre3">
-                            教育
-                        </label>
-                    </div>
-                    <!-- society -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre4" type="checkbox" id="genre4">
-                        <label class="form-check-label" for="genre4">
-                            社会
-                        </label>
-                    </div>
-                    <!-- Law -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre5" type="checkbox" id="genre5">
-                        <label class="form-check-label" for="genre5">
-                            法律
-                        </label>
-                    </div>
-                    <!-- Economy -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre6" type="checkbox" id="genre6">
-                        <label class="form-check-label" for="genre6">
-                            経済
-                        </label>
-                    </div>
-                    <!-- Management -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre7" type="checkbox" id="genre7">
-                        <label class="form-check-label" for="genre7">
-                            経営
-                        </label>
-                    </div>
-                    <!-- Business -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre8" type="checkbox" id="genre8">
-                        <label class="form-check-label" for="genre8">
-                            ビジネス
-                        </label>
-                    </div>
-                    <!-- Science -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre9" type="checkbox" id="genre9">
-                        <label class="form-check-label" for="genre9">
-                            理学
-                        </label>
-                    </div>
-                    <!-- Enginering -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre10" type="checkbox" id="genre10">
-                        <label class="form-check-label" for="genre10">
-                            工学
-                        </label>
-                    </div>
-                    <!-- Language -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre11" type="checkbox" id="genre11">
-                        <label class="form-check-label" for="genre11">
-                            語学
-                        </label>
-                    </div>
-                    <!-- Art -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre12" type="checkbox" id="genre12">
-                        <label class="form-check-label" for="genre12">
-                            芸術
-                        </label>
-                    </div>
-                    <!-- Game -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre13" type="checkbox" id="genre13">
-                        <label class="form-check-label" for="genre13">
-                            ゲーム
-                        </label>
-                    </div>
-                    <!-- Entertaiment -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre14" type="checkbox" id="genre14">
-                        <label class="form-check-label" for="genre14">
-                            エンターテイメント
-                        </label>
-                    </div>
-                    <!-- Comic -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre15" type="checkbox" id="genre15">
-                        <label class="form-check-label" for="genre15">
-                            コミック
-                        </label>
-                    </div>
-                    <!-- Children -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre16" type="checkbox" id="genre16">
-                        <label class="form-check-label" for="genre16">
-                            児童
-                        </label>
-                    </div>
-                    <!-- Dictionary -->
-                    <div class="form-check col-md-3">
-                        <input class="form-check-input" name="genre17" type="checkbox" id="genre17">
-                        <label class="form-check-label" for="genre17">
-                            辞典
-                        </label>
-                    </div>
-                </fieldset>
+            <div class="col-md-12">
+                <label for="bookGenre" class="form-label">ジャンル</label>
+                <input type="text" th:field="*{genre}" class="form-control" id="bookGenre">
             </div>
+            <input type="hidden" th:field="*{crDate}" value="">
+            <input type="hidden" th:field="*{upDate}" value="">
+
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">登録</button>
             </div>
@@ -253,6 +133,13 @@
 
     <!-- My JS -->
     <script src="/js/Main.js"></script>
+    	<script type="text/javascript">
+   
+    var hid1 = $('#crDate');
+	var hid2 = $('#upDate');
+	hid1.val(getCurrentDate);
+	hid2.val(getCurrentDate); 
+    </script>
 </body>
 
 </html>
