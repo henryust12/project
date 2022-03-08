@@ -19,6 +19,16 @@ import javax.persistence.Table;
 public class Users {
 	
 
+	
+
+	/**
+	 * 
+	 */
+	public Users() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * @param userId
 	 * @param firstName
@@ -35,7 +45,7 @@ public class Users {
 	 * @param upDate
 	 */
 	public Users(String userId, String firstName, String firstNameKana, String lastName, String lastNameKana, char sex,
-			String phoneNumber, Date birthday, String dateOfEmployee, char userLevel, String password, Date crDate,
+			String phoneNumber, Date birthday, Date dateOfEmployee, char userLevel, String password, Date crDate,
 			Date upDate) {
 		super();
 		this.userId = userId;
@@ -51,14 +61,6 @@ public class Users {
 		this.password = password;
 		this.crDate = crDate;
 		this.upDate = upDate;
-	}
-
-	/**
-	 * 
-	 */
-	public Users() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@Id
@@ -86,7 +88,7 @@ public class Users {
 	private Date birthday;
 
 	@Column(nullable = false, name = "date_of_employee")
-	private String dateOfEmployee;
+	private Date dateOfEmployee;
 
 	@Column(nullable = false, name = "user_level")
 	private char userLevel;
@@ -99,15 +101,6 @@ public class Users {
 
 	@Column(nullable = true, name = "up_date")
 	private Date upDate;
-
-	@Override
-	public String toString() {
-		return "Users [userId=" + userId + ", firstName=" + firstName + ", firstNameKana=" + firstNameKana
-				+ ", lastName=" + lastName + ", lastNameKana=" + lastNameKana + ", sex=" + sex + ", phoneNumber="
-				+ phoneNumber + ", birthday=" + birthday + ", dateOfEmployee=" + dateOfEmployee + ", userLevel="
-				+ userLevel + ", password=" + password + ", crDate=" + crDate + ", upDate=" + upDate + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
-	}
 
 	/**
 	 * @return the userId
@@ -224,14 +217,14 @@ public class Users {
 	/**
 	 * @return the dateOfEmployee
 	 */
-	public String getDateOfEmployee() {
+	public Date getDateOfEmployee() {
 		return dateOfEmployee;
 	}
 
 	/**
 	 * @param dateOfEmployee the dateOfEmployee to set
 	 */
-	public void setDateOfEmployee(String dateOfEmployee) {
+	public void setDateOfEmployee(Date dateOfEmployee) {
 		this.dateOfEmployee = dateOfEmployee;
 	}
 
@@ -290,6 +283,22 @@ public class Users {
 	public void setUpDate(Date upDate) {
 		this.upDate = upDate;
 	}
+
+	@Override
+	public String toString() {
+		return "Users [userId=" + userId + ", firstName=" + firstName + ", firstNameKana=" + firstNameKana
+				+ ", lastName=" + lastName + ", lastNameKana=" + lastNameKana + ", sex=" + sex + ", phoneNumber="
+				+ phoneNumber + ", birthday=" + birthday + ", dateOfEmployee=" + dateOfEmployee + ", userLevel="
+				+ userLevel + ", password=" + password + ", crDate=" + crDate + ", upDate=" + upDate + ", getUserId()="
+				+ getUserId() + ", getFirstName()=" + getFirstName() + ", getFirstNameKana()=" + getFirstNameKana()
+				+ ", getLastName()=" + getLastName() + ", getLastNameKana()=" + getLastNameKana() + ", getSex()="
+				+ getSex() + ", getPhoneNumber()=" + getPhoneNumber() + ", getBirthday()=" + getBirthday()
+				+ ", getDateOfEmployee()=" + getDateOfEmployee() + ", getUserLevel()=" + getUserLevel()
+				+ ", getPassword()=" + getPassword() + ", getCrDate()=" + getCrDate() + ", getUpDate()=" + getUpDate()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+
 
 	
 

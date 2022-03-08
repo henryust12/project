@@ -68,38 +68,38 @@
 
 
         <!--　↓ Form-Start -->
-        <form class="row g-3 mt-5">
+        <form class="row g-3 mt-5" action="#" th:action="@{/users/addAction}" th:object="${user}" method="post">
             <div class="col-md-12">
                 <label for="userId" class="form-label">ユーザーID</label>
-                <input type="text" name="userId" class="form-control" id="userId" disabled>
+                <input type="text" th:field="*{userId}" class="form-control" id="userId">
             </div>
             <div class="col-md-6">
                 <label for="name" class="form-label">名前</label>
-                <input type="text" name="name" class="form-control" id="name">
+                <input type="text" th:field="*{firstName}" class="form-control" id="name">
             </div>
             <div class="col-md-6">
                 <label for="nameKana" class="form-label">名前仮名</label>
-                <input type="text" name="nameKana" class="form-control" id="nameKana">
+                <input type="text" th:field="*{firstNameKana}" class="form-control" id="nameKana">
             </div>
             <div class="col-md-6">
                 <label for="lastName" class="form-label">苗字</label>
-                <input type="text" name="lastName" class="form-control" id="lastName">
+                <input type="text" th:field="*{lastName}" class="form-control" id="lastName">
             </div>
             <div class="col-md-6">
                 <label for="lastNameKana" class="form-label">苗字仮名</label>
-                <input type="text" name="lastNameKana" class="form-control" id="lastNameKana">
+                <input type="text" th:field="*{lastNameKana}" class="form-control" id="lastNameKana">
             </div>
             <div class="col-md-12">
                 <fieldset class="row">
                     <legend>性別</legend>
                     <div class="form-check col-sm-1">
-                        <input class="form-check-input" type="radio" name="sex" id="male" value="男" checked>
+                        <input class="form-check-input" type="radio" th:field="*{sex}" id="male" value="男" checked>
                         <label class="form-check-label" for="male">
                           男
                         </label>
                       </div>
                       <div class="form-check col-md-1">
-                        <input class="form-check-input" type="radio" name="sex" id="female" value="女">
+                        <input class="form-check-input" type="radio" th:field="*{sex}" id="female" value="女">
                         <label class="form-check-label" for="female">
                           女
                         </label>
@@ -111,20 +111,23 @@
             </div>
             <div class="col-md-12">
                 <label for="phone" class="form-label">携帯番号</label>
-                <input type="text" name="phone" class="form-control" id="phone">
+                <input type="text" th:field="*{phoneNumber}" class="form-control" id="phone">
             </div>
             <div class="col-md-6">
                 <label for="birthday" class="form-label">誕生日</label>
-                <input type="datetime-local" name="birthday" class="form-control" id="birthday">
+                <input type="date" th:field="*{birthday}" class="form-control" id="birthday">
             
             </div>
             <div class="col-md-6">
                 <label for="employerDate" class="form-label">雇用年月日</label>
-                <input type="datetime-local" name="employerDate" class="form-control" id="employerDate">
+                <input type="date" th:field="*{dateOfEmployee}" class="form-control" id="employerDate">
             </div>
             <div class="col-md-12">
-                <label for="userLevel" class="form-label">ウーサーレベル</label>
-                <input type="text" name="userLevel" class="form-control" id="userLevel">
+                <label for="userLevel" class="form-label">ウーサーレベル「１＝レジ　｜　２＝マネジャー」</label>
+                <input type="number" th:field="*{userLevel}" step="1" min="1" max="2" class="form-control" id="userLevel" value="1">
+            	<input type="hidden" th:field="*{password}">
+            	<input type="hidden" th:field="*{crDate}" value="">
+            	<input type="hidden" th:field="*{upDate}" value="">
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">登録</button>
@@ -145,10 +148,14 @@
 
 
 
-
+ 
     
     <!-- My JS -->
     <script src="/js/Main.js"></script>
+    <script type="text/javascript">
+	    var hid2 = $('#upDate');
+		hid2.val(getCurrentDate); 
+    </script>
 </body>
 
 </html>
