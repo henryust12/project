@@ -33,40 +33,45 @@
 <body>
 	<div class="container-sm">
 		<!--　↓ navbar-start -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#"><img width="15%"
-					src="/images/elon.png" alt="">エロン-本屋</a>
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<!-- Book -->
-						<li class="nav-item"><a class="nav-link" aria-current="page"
-							href="/BookList.html">本リスト</a></li>
-						<li class="nav-item"><a class="nav-link active" href="#">本挿入</a>
-						</li>
-						<hr>
-						<!-- Employee -->
-						<li class="nav-item"><a class="nav-link" href="#">従業員リスト</a>
-						</li>
-						<li class="nav-item"><a class="nav-link" href="#">従業員挿入</a></li>
-						<hr>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" th:href="@{#}"><img width="15%" src="/images/elon.png" alt="">エロン-本屋</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Book -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{/books}">本リスト</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/books/add}">本挿入</a>
+                        </li>
+                         <hr>
+                        <!-- Employee -->
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/users}">従業員リスト</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/users/add}">従業員挿入</a>
+                        </li>
+                         <hr>
+                        
 
+                         <hr>
+                        <li class="nav-item">
+                        <a class="nav-link text-info" th:href="@{/users/details}">userId</a>
+                            <a th:href="@{/}"><button class="btn btn-warning bi bi-box-arrow-right data-bs-toggle="tooltip" data-bs-placement="top" title="ログアウト""></button></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-						<hr>
-						<li class="nav-item"><a class="nav-link text-danger" href="#">userId,
-								ログアウト</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-
-		<!--　↑ navbar-end -->
+        <!--　↑ navbar-end -->
 
 
 		<!--　↓ Table-Start -->
@@ -85,8 +90,6 @@
 					<th>値段</th>
 					<!--Discount-->
 					<th>割引</th>
-					<!--Stock-->
-					<th>在庫</th>
 					<!--publisher-->
 					<th>出版社</th>
 					<!--author-->
@@ -108,7 +111,6 @@
 					<td th:text="${book.titleKana}"></td>
 					<td th:text="${book.price}"></td>
 					<td th:text="${book.discount}"></td>
-					<td th:text="${book.stock}"></td>
 					<td th:text="${book.publisher}"></td>
 					<td th:text="${book.author}"></td>
 					<td th:text="${book.authorKana}"></td>

@@ -18,6 +18,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tbl_books")
 public class Books {
+	
+
 	/**
 	 * 
 	 */
@@ -32,7 +34,6 @@ public class Books {
 	 * @param titleKana
 	 * @param price
 	 * @param discount
-	 * @param stock
 	 * @param publisher
 	 * @param author
 	 * @param authorKana
@@ -40,15 +41,14 @@ public class Books {
 	 * @param crDate
 	 * @param upDate
 	 */
-	public Books(String isbn, String title, String titleKana, int price, int discount, int stock, String publisher,
-			String author, String authorKana, String genre, Date crDate, Date upDate) {
+	public Books(String isbn, String title, String titleKana, int price, int discount, String publisher, String author,
+			String authorKana, String genre, Date crDate, Date upDate) {
 		super();
 		this.isbn = isbn;
 		this.title = title;
 		this.titleKana = titleKana;
 		this.price = price;
 		this.discount = discount;
-		this.stock = stock;
 		this.publisher = publisher;
 		this.author = author;
 		this.authorKana = authorKana;
@@ -71,9 +71,6 @@ public class Books {
 	
 	@Column(nullable = false, name = "discount")
 	private int discount;
-	
-	@Column(nullable = false, name = "stock")
-	private int stock;
 	
 	@Column(nullable = false, name = "publisher")
 	private String publisher;
@@ -164,20 +161,6 @@ public class Books {
 	}
 
 	/**
-	 * @return the stock
-	 */
-	public int getStock() {
-		return stock;
-	}
-
-	/**
-	 * @param stock the stock to set
-	 */
-	public void setStock(int stock) {
-		this.stock = stock;
-	}
-
-	/**
 	 * @return the publisher
 	 */
 	public String getPublisher() {
@@ -264,15 +247,15 @@ public class Books {
 	@Override
 	public String toString() {
 		return "Books [isbn=" + isbn + ", title=" + title + ", titleKana=" + titleKana + ", price=" + price
-				+ ", discount=" + discount + ", stock=" + stock + ", publisher=" + publisher + ", author=" + author
-				+ ", authorKana=" + authorKana + ", genre=" + genre + ", crDate=" + crDate + ", upDate=" + upDate
-				+ ", getIsbn()=" + getIsbn() + ", getTitle()=" + getTitle() + ", getTitleKana()=" + getTitleKana()
-				+ ", getPrice()=" + getPrice() + ", getDiscount()=" + getDiscount() + ", getStock()=" + getStock()
-				+ ", getPublisher()=" + getPublisher() + ", getAuthor()=" + getAuthor() + ", getAuthorKana()="
-				+ getAuthorKana() + ", getGenre()=" + getGenre() + ", getCrDate()=" + getCrDate() + ", getUpDate()="
-				+ getUpDate() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
+				+ ", discount=" + discount + ", publisher=" + publisher + ", author=" + author + ", authorKana="
+				+ authorKana + ", genre=" + genre + ", crDate=" + crDate + ", upDate=" + upDate + ", getIsbn()="
+				+ getIsbn() + ", getTitle()=" + getTitle() + ", getTitleKana()=" + getTitleKana() + ", getPrice()="
+				+ getPrice() + ", getDiscount()=" + getDiscount() + ", getPublisher()=" + getPublisher()
+				+ ", getAuthor()=" + getAuthor() + ", getAuthorKana()=" + getAuthorKana() + ", getGenre()=" + getGenre()
+				+ ", getCrDate()=" + getCrDate() + ", getUpDate()=" + getUpDate() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
+
 
 
 }
