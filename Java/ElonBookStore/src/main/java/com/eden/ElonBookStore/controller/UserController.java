@@ -61,6 +61,14 @@ public class UserController {
 	        userService.updateUser(user);
 	        return "redirect:/users";
 	    }
+	  @RequestMapping("/resetpassword/{userId}")
+		private String resetPasswordAction(@PathVariable("userId") String userId) {
+		  Users user = userService.loadUserkById(userId);
+		  user.setUserId(userId);
+		  user.setPassword("12345678");
+	        userService.updateUser(user);
+	        return "redirect:/users";
+	    }
 	  
 	  @GetMapping("/delete/{userId}")
 		public String deleteBook(@PathVariable("userId") String userId) {

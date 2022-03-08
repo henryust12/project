@@ -110,35 +110,9 @@
                     <td th:text="${user.dateOfEmployee}"></td>
                     <td th:text="${user.userLevel}"></td>
                     <td>
-                        <div class="row">
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                data-bs-target="#CheckRisetPassword">
-                                再設定
-                            </button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="CheckRisetPassword" tabindex="-1" aria-labelledby="RisetPasswordModal"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="RisetPasswordModal">パスワード再設定メッセージ</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <span class="text-danger">User 1111 - ゆき</span> のパスワードを再設定しますか？
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">いいえ</button>
-                                            <button type="button" class="btn btn-primary">はい</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <a th:href="@{/users/resetpassword/{userId}(userId=${user.userId})}">
+							<button onclick='resetAlert();' type="button" class="btn btn-warning">削除</button>
+					</a>
                     </td>
                     <td th:text="${user.crDate}"></td>
                     <td th:text="${user.upDate}"></td>

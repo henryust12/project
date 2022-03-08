@@ -40,4 +40,7 @@ $('#buySubmit').click(function() {
 function deleteAlert() {
 	alert("データを削除しました");
 }
+function resetAlert() {
+	alert("パスワードをリセットしました");
+}
 

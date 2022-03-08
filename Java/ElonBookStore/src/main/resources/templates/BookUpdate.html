@@ -76,7 +76,7 @@
         <form class="row g-3 mt-5" action="#" th:action="@{/books/editAction/{isbn}(isbn=${book.isbn})}" th:object="${book}" method="post">
             <div class="col-md-12">
                 <label for="bookISBN" class="form-label">ISBN</label>
-                <input type="text" th:field="*{isbn}" class="form-control" id="bookISBN">
+                <input readonly="readonly" type="text" th:field="*{isbn}" class="form-control" id="bookISBN">
             </div>
             <div class="col-md-6">
                 <label for="bookTitle" class="form-label">タイトル</label>
