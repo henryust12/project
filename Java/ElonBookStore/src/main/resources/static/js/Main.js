@@ -32,8 +32,6 @@ $('#buySubmit').click(function() {
     		
 //     		alert(formattedDate); //2021-02-28
     		return formattedDate;
-    		hid1.val(formattedDate);
-    		hid2.val(formattedDate);
     }
 
 
@@ -42,5 +40,9 @@ function deleteAlert() {
 }
 function resetAlert() {
 	alert("パスワードをリセットしました");
+}
+function buyAlert() {
+	
+	alert("本を買いました");
 }
 

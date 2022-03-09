@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrapcss/bootstrap.css">
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+     <!-- Bootstrap JS -->
+     <script src="/js/bootstrapjs/bootstrap.js"></script>
+     <!-- Jquery -->
+     <script src="/js/jQuery/jquery-3.6.0.min.js"></script>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/css/Main.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
+    <title>本リスト-エロン-本屋</title>
+</head>
+
+<body>
+    <div class="container-sm">
+        <button onclick="history.back()" type="button" class="btn btn-info">戻る</button>
+        <!--　↓ Table-Start -->
+		<div class="table-responsive-sm">
+			<table
+				class="table table-success table-striped table-bordered table-hover mt-5 needs-validation">
+
+				<tr class="table-dark">
+					<th></th>
+					<!--ISBN Code-->
+					<th>ISBN</th>
+					<!--Title-->
+					<th>タイトル</th>
+					<!--Title Kana-->
+					<th>タイトル仮名</th>
+					<!--Price-->
+					<th>値段</th>
+					<!--Discount-->
+					<th>割引</th>
+					<!--publisher-->
+					<th>出版社</th>
+					<!--author-->
+					<th>著者</th>
+					<!--author kana-->
+					<th>著者仮名</th>
+					<!-- Genre kana-->
+					<th>ジャンル</th>
+				</tr>
+
+
+
+				<tr th:each="book : ${allBooks}">
+					<td class="text-center">
+					<a th:href="@{/cashier/booklist/buy/{id}(id=${book.isbn})}">
+							<button onclick="buyAlert();" type="button" class="btn btn-success" style="width: 100%">
+							<i class="bi bi-currency-yen"></i>
+							</button>
+					</a>
+					</td>
+					<td th:text="${book.isbn}"></td>
+					<td th:text="${book.title}"></td>
+					<td th:text="${book.titleKana}"></td>
+					<td th:text="${book.price}"></td>
+					<td th:text="${book.discount}"></td>
+					<td th:text="${book.publisher}"></td>
+					<td th:text="${book.author}"></td>
+					<td th:text="${book.authorKana}"></td>
+					<td th:text="${book.genre}"></td>
+					
+					
+				</tr>
+
+
+			</table>
+			
+			<input type="hidden" name="crDate" value="">
+		</div>
+
+		<!--　↑ Table-End -->
+
+
+        <!-- Footer -->
+        <div class="position-relative mt-5">
+            <div class="position-absolute top-100 start-50 translate-middle">
+                <p> Created with <i class="text-danger bi-heart-fill"></i> by Hendri Simarmata</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- My JS -->
+    <script src="/js/Main.js"></script>
+    <script type="text/javascript">
+   
+    var hid1 = $('#crDate');
+	hid1.val(getCurrentDate);
+    </script>
+</body>
+
+</html>
