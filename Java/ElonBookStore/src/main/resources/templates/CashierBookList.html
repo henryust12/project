@@ -78,8 +78,11 @@
 
 
 			</table>
+			<form th:object="${book}">
+			<input type="hidden" name="crDate" value="" id="crDate">
 			
-			<input type="hidden" name="crDate" value="">
+			</form>
+			
 		</div>
 
 		<!--　↑ Table-End -->
@@ -96,10 +99,13 @@
 
     <!-- My JS -->
     <script src="/js/Main.js"></script>
-    <script type="text/javascript">
+    	<script type="text/javascript">
    
-    var hid1 = $('#crDate');
-	hid1.val(getCurrentDate);
+//     var hid1 = $('#crDate');
+// 	hid1.val(getCurrentDate());
+var x = document.getElementById("crDate");
+x.value=getCurrentDate();
+// 	alert(x.value);
     </script>
 </body>
 

@@ -42,7 +42,6 @@ function resetAlert() {
 	alert("パスワードをリセットしました");
 }
 function buyAlert() {
-	
 	alert("本を買いました");
 }
 

@@ -62,7 +62,7 @@ public class CashierController {
 		buy.setAuthor(book.getAuthor());
 		buy.setAuthorKana(book.getAuthorKana());
 		buy.setGenre(book.getGenre());
-		buy.setCrDate(null);
+		buy.setCrDate(book.getCrDate());
 		buyService.saveBuy(buy);
 
 		return "redirect:/cashier/booklist";
