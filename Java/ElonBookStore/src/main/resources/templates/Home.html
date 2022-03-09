@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -31,33 +31,30 @@
                 <!-- 意図的に空にする-->
             </div>
             <div class="col-sm">
-                <img src="/images/elon.png" class="rounded mx-auto d-block" alt="...">
-                <h5 class="text-danger" align="center">User or password invalid</h5>
-                <form class="mb-5">
+                <img src="/images/elon.png" class="rounded mx-auto d-block" alt="elon logo">
+                <form class="mb-5" action="#" th:action="@{/login}" th:object="${userLogin}" method="post">
                     <div class="row mb-3">
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="userId" placeholder="ユーザーID">
+                            <input type="text" class="form-control" th:field="*{userId}" placeholder="ユーザーID">
                         </div>
-                        <p class="text-danger">email error</p>
                     </div>
                     <div class="row mb-3">
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" name="pass" placeholder="パスワード">
+                            <input type="password" class="form-control" th:field="*{password}" placeholder="パスワード">
                         </div>
-                        <p class="text-danger">password error</p>
                     </div>
                     <fieldset class="row mb-3">
                         <legend class="col-form-label col-sm-2 pt-0">Level</legend>
                         <br>
                         <div class="col-sm-10">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="level" id="level1" value="1" checked>
+                                <input class="form-check-input" type="radio" th:field="*{userLevel}" id="level1" value="1" checked>
                                 <label class="form-check-label" for="level1">
                                     レジ
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="level" id="level2" value="2">
+                                <input class="form-check-input" type="radio" th:field="*{userLevel}" id="level2" value="2">
                                 <label class="form-check-label" for="level2">
                                     マネジャー
                                 </label>

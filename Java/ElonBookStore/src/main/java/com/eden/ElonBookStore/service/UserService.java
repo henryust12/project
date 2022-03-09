@@ -48,4 +48,12 @@ public class UserService {
 			return userRepository.save(user);
 		}
 
+		
+		// Login
+//		public Users login(String userId, String password, char userLevel) {
+//			return userRepository.loadUserLogin(userId, password, userLevel);
+//		}
+		public Users getUserLogin(Users user) {
+			return loadUserkById(user.getUserId());
+		}
 }
