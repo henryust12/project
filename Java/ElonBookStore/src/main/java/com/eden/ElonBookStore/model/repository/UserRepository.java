@@ -3,6 +3,8 @@
  */
 package com.eden.ElonBookStore.model.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -24,7 +26,9 @@ public interface UserRepository extends JpaRepository<Users, String> {
 //	        		   "and password='?2' and user_level='?3';")
 //	Users loadUserLogin(String userId, String password, char userLevel); 
 	
-//	@Query(nativeQuery = true,
-//            value = "select * from tbl_users where user_id=':uid' and password=':psw' and user_level=':ul';")
-//  Users loadUserLogin(@Param("uid") String userId,@Param("psw") String password,@Param("ul") char userLevel);
+	//@Query(nativeQuery = true, value = "select * from tbl_users;")
+//	Users loadUserLogin(@Param("uid") String userId,@Param("psw") String password,@Param("ul") char userLevel);
+	//Users loadUserLogin();
+	@Query(nativeQuery = true, value = "select * from tbl_users;")
+	public List<Users> loadUserLogin();
 }

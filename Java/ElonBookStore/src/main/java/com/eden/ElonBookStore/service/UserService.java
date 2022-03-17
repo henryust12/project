@@ -27,8 +27,13 @@ public class UserService {
 	
 	// CRUD
 	// select *
+//	public List<Users> loadAllUsers(){
+//		return (List<Users> ) userRepository.findAll();
+//	}
+	
+
 	public List<Users> loadAllUsers(){
-		return (List<Users> ) userRepository.findAll();
+		return (List<Users> ) userRepository.loadUserLogin();
 	}
 	// select where
 		public Users loadUserkById(String userId) {
