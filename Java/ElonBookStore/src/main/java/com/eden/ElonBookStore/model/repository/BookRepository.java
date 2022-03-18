@@ -16,7 +16,7 @@ import com.eden.ElonBookStore.model.dto.Books;
 public interface BookRepository extends JpaRepository<Books, String> {
 	
 	@Query(
-			  value = "SELECT * from tbl_books tb where tb.title LIKE %:title", 
+			  value = "SELECT * from tbl_books tb where tb.title LIKE %:title%", 
 			  nativeQuery = true)
 				List<Books> findByTitle(@Param("title") String title);
 	
