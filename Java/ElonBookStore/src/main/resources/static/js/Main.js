@@ -51,11 +51,11 @@ function bookSearch() {
 	var rad2 = document.getElementById("searchByTitle");
 	
 	if(rad1.checked){
-			window.location.assign('http://localhost:8080/books/search/isbn/'+txt1);
+			window.location.assign('/books/search/isbn/'+txt1);
 
 	}
 	if(rad2.checked){
-			window.location.assign('http://localhost:8080/books/search/title/'+txt1);
+			window.location.assign('/books/search/title/'+txt1);
 	}
 }
 
@@ -66,11 +66,11 @@ function cashierBookSearch() {
 	var rad2 = document.getElementById("searchByTitle");
 	
 	if(rad1.checked){
-			window.location.assign('http://localhost:8080/cashier/booklist/isbn/'+txt1);
+			window.location.assign('/cashier/booklist/isbn/'+txt1);
 
 	}
 	if(rad2.checked){
-			window.location.assign('http://localhost:8080/cashier/booklist/title/'+txt1);
+			window.location.assign('/cashier/booklist/title/'+txt1);
 	}
 }
 
