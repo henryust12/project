@@ -42,8 +42,14 @@ public class BookService {
 		bookRepository.deleteById(isbn);
 	}
 	// update
-	public Books updateBook(Books book) {
-		return bookRepository.save(book);
+		public Books updateBook(Books book) {
+			return bookRepository.save(book);
+		}
+		
+	// search by title
+	public List<Books> searchByTitle(String title) {
+		return bookRepository.findByTitle(title);
 	}
+		
 
 }

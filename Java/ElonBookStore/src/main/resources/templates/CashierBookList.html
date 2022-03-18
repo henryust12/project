@@ -27,6 +27,17 @@
     <div class="container-sm">
     	<a th:href="@{/cashier}"><button type="button" class="btn btn-info">戻る</button></a>
         
+        <br>
+         <input type="radio" name="radioSeach" value=1 id="searchByIsbn" checked=checked>
+         <label for="searchByIsbn">ISBN</label>
+          &#8195;||&#8195;
+         <input type="radio" name="radioSeach" value=2 id="searchByTitle">
+         <label for="searchByTitle">タイトル</label>
+         <br>
+        <label for="bookSearch">検索</label>
+        <input type="text" class="form-control" id="bookSearchTxt">
+        <button onclick='cashierBookSearch();' type="button" class="btn btn-success">検索</button>
+        
         <!--　↓ Table-Start -->
 		<div class="table-responsive-sm">
 			<table

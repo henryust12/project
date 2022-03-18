@@ -45,3 +45,32 @@ function buyAlert() {
 	alert("本を買いました");
 }
 
+function bookSearch() {
+	var txt1 = document.getElementById("bookSearchTxt").value;
+	var rad1 = document.getElementById("searchByIsbn");
+	var rad2 = document.getElementById("searchByTitle");
+	
+	if(rad1.checked){
+			window.location.assign('http://localhost:8080/books/search/isbn/'+txt1);
+
+	}
+	if(rad2.checked){
+			window.location.assign('http://localhost:8080/books/search/title/'+txt1);
+	}
+}
+
+
+function cashierBookSearch() {
+	var txt1 = document.getElementById("bookSearchTxt").value;
+	var rad1 = document.getElementById("searchByIsbn");
+	var rad2 = document.getElementById("searchByTitle");
+	
+	if(rad1.checked){
+			window.location.assign('http://localhost:8080/cashier/booklist/isbn/'+txt1);
+
+	}
+	if(rad2.checked){
+			window.location.assign('http://localhost:8080/cashier/booklist/title/'+txt1);
+	}
+}
+

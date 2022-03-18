@@ -70,10 +70,16 @@
 
         <!--　↑ navbar-end -->
         <h1>本リスト</h1>
-        
+         <br>
+         <input type="radio" name="radioSeach" value=1 id="searchByIsbn" checked=checked>
+         <label for="searchByIsbn">ISBN</label>
+          &#8195;||&#8195;
+         <input type="radio" name="radioSeach" value=2 id="searchByTitle">
+         <label for="searchByTitle">タイトル</label>
+         <br>
         <label for="bookSearch">検索</label>
-        <input type="text" class="form-control" id="bookSearch">
-        <button onclick='deleteAlert();' type="button" class="btn btn-danger">削除</button>
+        <input type="text" class="form-control" id="bookSearchTxt">
+        <button onclick='bookSearch();' type="button" class="btn btn-success">検索</button>
 		<!--　↓ Table-Start -->
 		<div class="table-responsive-sm">
 			<table

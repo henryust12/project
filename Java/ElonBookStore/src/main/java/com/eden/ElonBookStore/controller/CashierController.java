@@ -8,6 +8,7 @@ package com.eden.ElonBookStore.controller;
 
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,6 +75,46 @@ public class CashierController {
 		model.addAttribute("allBooks", list);
 		return "CashierBookList";
 	}
+	@RequestMapping("/booklist/isbn")
+	private String getAllBooksIsbn(Model model) {
+		List<Books> list = bookService.loadAllBooks();
+		model.addAttribute("allBooks", list);
+		return "CashierBookList";
+	}
+	@RequestMapping("/booklist/title")
+	private String getAllBooksTitle(Model model) {
+		List<Books> list = bookService.loadAllBooks();
+		model.addAttribute("allBooks", list);
+		return "CashierBookList";
+	}
+	
+	@RequestMapping("/booklist/isbn/{isbn}")
+	public String searchBookByIsbn(@PathVariable("isbn") String isbn, Model model) {
+		try {
+			Books book = bookService.loadBookById(isbn);
+			List<Books> list = new ArrayList<Books>();
+			list.add(book);
+			model.addAttribute("allBooks", list);
+			return "CashierBookList";
+		} catch (Exception e) {
+			return "Error";
+		}
+	}
+	
+	@RequestMapping("/booklist/title/{title}")
+	public String searchBookByTitle(@PathVariable("title") String title, Model model) {
+		try {
+			List<Books> list = bookService.searchByTitle(title);	
+			if(list.size()==0) {
+				return "Error";
+			}
+			model.addAttribute("allBooks", list);
+			return "CashierBookList";
+		} catch (Exception e) {
+			return "Error";
+		}
+	}
+	
 	
 	@RequestMapping("/history")
 	  public String buyHistory(Model model) {

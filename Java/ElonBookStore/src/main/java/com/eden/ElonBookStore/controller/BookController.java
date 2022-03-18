@@ -4,6 +4,7 @@
 package com.eden.ElonBookStore.controller;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -45,7 +46,48 @@ public class BookController {
 		model.addAttribute("allBooks", list);
 		return "BookList";
 	}
- 
+	@RequestMapping("/search/isbn")
+	public String searchBookIsbn(Model model) {
+		List<Books> list = bookService.loadAllBooks();
+		model.addAttribute("allBooks", list);
+		return "BookList";
+	}
+	@RequestMapping("/search/title")
+	public String searchBookTitle(Model model) {
+		List<Books> list = bookService.loadAllBooks();
+		model.addAttribute("allBooks", list);
+		return "BookList";
+	}
+	
+	
+	@RequestMapping("/search/isbn/{isbn}")
+	public String searchBookByIsbn(@PathVariable("isbn") String isbn, Model model) {
+		try {
+			Books book = bookService.loadBookById(isbn);
+			List<Books> list = new ArrayList<Books>();
+			list.add(book);
+			model.addAttribute("allBooks", list);
+			return "BookList";
+		} catch (Exception e) {
+			return "Error";
+		}
+	}
+	
+	@RequestMapping("/search/title/{title}")
+	public String searchBookByTitle(@PathVariable("title") String title, Model model) {
+		try {
+			List<Books> list = bookService.searchByTitle(title);	
+			if(list.size()==0) {
+				return "Error";
+			}
+			model.addAttribute("allBooks", list);
+			return "BookList";
+		} catch (Exception e) {
+			return "Error";
+		}
+	}
+	
+	
 	@RequestMapping("/add")
 	public String addBook(Model model) {
 		Books book = new Books();
